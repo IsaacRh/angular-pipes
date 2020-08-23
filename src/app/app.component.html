@@ -35,8 +35,24 @@
         <td>slice:0:3</td>
         <td>{{ array| slice:0:3 }}</td>
       </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>Number witout decimals</td>
+        <td>{{ PI | number:'1.0-0' }}</td> <!--without decimal-->
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>Number with 3 integer positions</td>
+        <td>{{ PI | number:'3.0-0' }}</td> <!--without decimal-->
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>Number with 3 decimals</td>
+        <td>{{ PI | number:'.0-2' }}</td> <!--without decimal-->
+      </tr>
     </table>
 
+    <hr>
     <h4>Slice</h4>
     <ul>
       <li *ngFor="let item of array | slice:4:20">{{ item }}</li>
