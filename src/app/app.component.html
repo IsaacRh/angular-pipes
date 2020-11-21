@@ -60,6 +60,16 @@
         <td>Percent</td>
         <td>{{ percentage | percent:'2.2-2' }}</td> <!--without decimal-->
       </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>Currency</td>
+        <td>{{ salary | currency }}</td> <!--without decimal-->
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>Currency whit code country</td>
+        <td>{{ salary | currency: 'CAD': 'symbol-narrow' }}</td> <!--without decimal-->
+      </tr>
     </table>
 
     <hr>

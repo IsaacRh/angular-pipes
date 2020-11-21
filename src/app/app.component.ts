@@ -10,4 +10,5 @@ export class AppComponent {
   array = [1,2,3,4,5,6,7,8,9,10];
   PI:number = Math.PI;
   percentage:number = 0.235;
+  salary: number = 1234.5;
 }
