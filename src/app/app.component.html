@@ -77,5 +77,14 @@
     <ul>
       <li *ngFor="let item of array | slice:4:20">{{ item }}</li>
     </ul>
+    <h3>JSON</h3>
+    <hr>
+    <div class="row mb-5">
+      <div class="col">
+        <pre>
+          {{hero | json}}
+        </pre>
+      </div>
+    </div>
   </div> 
 </div>
