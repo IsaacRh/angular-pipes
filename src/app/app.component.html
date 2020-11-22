@@ -75,6 +75,27 @@
         <td>Promise</td>
         <td>{{ valPromise | async }}</td> <!--without decimal-->
       </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>Date</td>
+        <td>{{ date | date}}</td> <!--without decimal-->
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>Date with format [MEDIUM]</td>
+        <td>{{ date | date:'medium'}}</td> <!--without decimal-->
+      </tr>
+
+      <tr>
+        <td>{{ date }}</td>
+        <td>Date with format [SHORT]</td>
+        <td>{{ date | date:'short'}}</td> <!--without decimal-->
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>Date with custom format</td>
+        <td>{{ date | date:'MMMM - dd'}}</td> <!--without decimal-->
+      </tr>
     </table>
 
     <hr>

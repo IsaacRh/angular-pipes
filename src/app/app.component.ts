@@ -12,6 +12,8 @@ export class AppComponent {
   percentage:number = 0.235;
   salary: number = 1234.5;
 
+  date : Date = new Date();
+
   valPromise = new Promise<string>((resolve) => {
     setTimeout(() =>{
       resolve("data...");
