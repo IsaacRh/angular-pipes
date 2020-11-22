@@ -1,132 +1,154 @@
 <h1 class="mt-3">Pipes <small>Angular</small></h1>
 <hr>
-<div class="row">
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Variable</th>
+      <th>Pipe</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>{{ name }}</td>
+    <td>upparcase</td>
+    <td>{{ name| uppercase }}</td>
+  </tr>
+  <tr>
+    <td>{{ name2 }}</td>
+    <td>custom Pipe</td>
+    <td>{{ name2 | customCapitalize:true }}</td>
+  </tr>
+  <tr>
+    <td>{{ name }}</td>
+    <td>lowercase</td>
+    <td>{{ name| lowercase }}</td>
+  </tr>
+  <tr>
+    <td>{{ name }}</td>
+    <td>slice:3</td>
+    <td>{{ name| slice:3 }}</td>
+  </tr>
+  <tr>
+    <td>{{ name }}</td>
+    <td>slice:0:3</td>
+    <td>{{ name| slice:0:3 }}</td>
+  </tr>
+  <tr>
+    <td>{{ array }}</td>
+    <td>slice:0:3</td>
+    <td>{{ array| slice:0:3 }}</td>
+  </tr>
+  <tr>
+    <td>{{ PI }}</td>
+    <td>Number witout decimals</td>
+    <td>{{ PI | number:'1.0-0' }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ PI }}</td>
+    <td>Number with 3 integer positions</td>
+    <td>{{ PI | number:'3.0-0' }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ PI }}</td>
+    <td>Number with 2 decimals</td>
+    <td>{{ PI | number:'.0-2' }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ percentage }}</td>
+    <td>Percent</td>
+    <td>{{ percentage | percent }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ percentage }}</td>
+    <td>Percent</td>
+    <td>{{ percentage | percent:'2.2-2' }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ salary }}</td>
+    <td>Currency</td>
+    <td>{{ salary | currency }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ salary }}</td>
+    <td>Currency whit code country</td>
+    <td>{{ salary | currency: 'CAD': 'symbol-narrow' }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ valPromise }}</td>
+    <td>Promise</td>
+    <td>{{ valPromise | async }}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ date }}</td>
+    <td>Date</td>
+    <td>{{ date | date}}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ date }}</td>
+    <td>Date with format [MEDIUM]</td>
+    <td>{{ date | date:'medium'}}</td> <!--without decimal-->
+  </tr>
+
+  <tr>
+    <td>{{ date }}</td>
+    <td>Date with format [SHORT]</td>
+    <td>{{ date | date:'short'}}</td> <!--without decimal-->
+  </tr>
+  <tr>
+    <td>{{ date }}</td>
+    <td>Date with custom format</td>
+    <td>{{ date | date:'MMMM - dd'}}</td> <!--without decimal-->
+  </tr>
+
+  <tr>
+    <td>{{ date }}</td>
+    <td>Date with custom format for {{language}}
+      <br>
+      <button (click) = "language = 'es'" class="mr-1 btn btn-primary">Spanish</button>
+      <button (click) = "language = 'en'" class="mr-1 btn btn-secondary">English</button>
+      <button (click) = "language = 'fr'" class="mr-1 btn btn-success">French</button>
+    </td>
+    <td>{{ date | date:'MMMM - dd': '': language}}</td> <!--without decimal-->
+  </tr>
+
+  <tr>
+    <td>{{ name }}</td>
+    <td>Password: {{enable}}
+      <br>
+      <button (click) = "enable = !enable"  class="btn btn-warning">Enable/disable</button>
+    </td>
+    <td>{{ name | enablePassword : enable}}</td> <!--without decimal-->
+  </tr>
+
+</table>
+
+<hr>
+<h4>Slice</h4>
+<ul>
+  <li *ngFor="let item of array | slice:4:20">{{ item }}</li>
+</ul>
+<h3>JSON</h3>
+<hr>
+<div class="row mb-5">
   <div class="col">
-    <table class="table">
-     <thead class="thead-dark">
-        <tr>
-          <th>Variable</th>
-          <th>Pipe</th>
-          <th>Output</th>
-        </tr>
-     </thead>
-      <tr>
-        <td>{{ name }}</td>
-        <td>upparcase</td>
-        <td>{{ name| uppercase }}</td>
-      </tr>
-      <tr>
-        <td>{{ name2 }}</td>
-        <td>custom Pipe</td>
-        <td>{{ name2 | customCapitalize:true }}</td>
-      </tr>
-      <tr>
-        <td>{{ name }}</td>
-        <td>lowercase</td>
-        <td>{{ name| lowercase }}</td>
-      </tr>
-      <tr>
-        <td>{{ name }}</td>
-        <td>slice:3</td>
-        <td>{{ name| slice:3 }}</td>
-      </tr>
-      <tr>
-        <td>{{ name }}</td>
-        <td>slice:0:3</td>
-        <td>{{ name| slice:0:3 }}</td>
-      </tr>
-      <tr>
-        <td>{{ array }}</td>
-        <td>slice:0:3</td>
-        <td>{{ array| slice:0:3 }}</td>
-      </tr>
-      <tr>
-        <td>{{ PI }}</td>
-        <td>Number witout decimals</td>
-        <td>{{ PI | number:'1.0-0' }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ PI }}</td>
-        <td>Number with 3 integer positions</td>
-        <td>{{ PI | number:'3.0-0' }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ PI }}</td>
-        <td>Number with 2 decimals</td>
-        <td>{{ PI | number:'.0-2' }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ percentage }}</td>
-        <td>Percent</td>
-        <td>{{ percentage | percent }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ percentage }}</td>
-        <td>Percent</td>
-        <td>{{ percentage | percent:'2.2-2' }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ salary }}</td>
-        <td>Currency</td>
-        <td>{{ salary | currency }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ salary }}</td>
-        <td>Currency whit code country</td>
-        <td>{{ salary | currency: 'CAD': 'symbol-narrow' }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ valPromise }}</td>
-        <td>Promise</td>
-        <td>{{ valPromise | async }}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ date }}</td>
-        <td>Date</td>
-        <td>{{ date | date}}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ date }}</td>
-        <td>Date with format [MEDIUM]</td>
-        <td>{{ date | date:'medium'}}</td> <!--without decimal-->
-      </tr>
+    <pre>
+      {{hero | json}}
+    </pre>
+  </div>
+</div>
 
-      <tr>
-        <td>{{ date }}</td>
-        <td>Date with format [SHORT]</td>
-        <td>{{ date | date:'short'}}</td> <!--without decimal-->
-      </tr>
-      <tr>
-        <td>{{ date }}</td>
-        <td>Date with custom format</td>
-        <td>{{ date | date:'MMMM - dd'}}</td> <!--without decimal-->
-      </tr>
-
-      <tr>
-        <td>{{ date }}</td>
-        <td>Date with custom format for english
-          <br>
-          <button (click) = "language = 'es'" class="mr-1 btn btn-primary">Spanish</button>
-          <button (click) = "language = 'en'" class="mr-1 btn btn-secondary">English</button>
-          <button (click) = "language = 'fr'" class="mr-1 btn btn-success">French</button>
-        </td>
-        <td>{{ date | date:'MMMM - dd': '': language}}</td> <!--without decimal-->
-      </tr>
-    </table>
-
-    <hr>
-    <h4>Slice</h4>
-    <ul>
-      <li *ngFor="let item of array | slice:4:20">{{ item }}</li>
-    </ul>
-    <h3>JSON</h3>
-    <hr>
-    <div class="row mb-5">
-      <div class="col">
-        <pre>
-          {{hero | json}}
-        </pre>
-      </div>
-    </div>
-  </div> 
+ 
+<h3 class="mt-4">SecurityDom</h3>
+<hr>
+<div class="row mb-5">
+  <div class="col">
+    <iframe width="560" 
+    height="315" 
+    [src]="urlVideo | customSecurityDom" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+  </div>
 </div>

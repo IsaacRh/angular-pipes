@@ -11,11 +11,15 @@ registerLocaleData(localFr);
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { CustomCapitalizePipe } from './pipes/custom-capitalize.pipe';
+import { CustomSecurityDomPipe } from './pipes/custom-security-dom.pipe';
+import { EnablePasswordPipe } from './pipes/enable-password.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomCapitalizePipe
+    CustomCapitalizePipe,
+    CustomSecurityDomPipe,
+    EnablePasswordPipe
   ],
   imports: [
     BrowserModule
