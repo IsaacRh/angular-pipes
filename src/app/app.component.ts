@@ -12,6 +12,12 @@ export class AppComponent {
   percentage:number = 0.235;
   salary: number = 1234.5;
 
+  valPromise = new Promise<string>((resolve) => {
+    setTimeout(() =>{
+      resolve("data...");
+    }, 4500);
+  });
+
   hero = {
     name: 'Logan',
     key: 'Wolwerine',

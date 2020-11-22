@@ -70,6 +70,11 @@
         <td>Currency whit code country</td>
         <td>{{ salary | currency: 'CAD': 'symbol-narrow' }}</td> <!--without decimal-->
       </tr>
+      <tr>
+        <td>{{ valPromise }}</td>
+        <td>Promise</td>
+        <td>{{ valPromise | async }}</td> <!--without decimal-->
+      </tr>
     </table>
 
     <hr>
