@@ -13,6 +13,7 @@ export class AppComponent {
   salary: number = 1234.5;
 
   date : Date = new Date();
+  language : string = 'es';
 
   valPromise = new Promise<string>((resolve) => {
     setTimeout(() =>{

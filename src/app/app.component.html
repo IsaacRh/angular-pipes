@@ -96,6 +96,17 @@
         <td>Date with custom format</td>
         <td>{{ date | date:'MMMM - dd'}}</td> <!--without decimal-->
       </tr>
+
+      <tr>
+        <td>{{ date }}</td>
+        <td>Date with custom format for english
+          <br>
+          <button (click) = "language = 'es'" class="mr-1 btn btn-primary">Spanish</button>
+          <button (click) = "language = 'en'" class="mr-1 btn btn-secondary">English</button>
+          <button (click) = "language = 'fr'" class="mr-1 btn btn-success">French</button>
+        </td>
+        <td>{{ date | date:'MMMM - dd': '': language}}</td> <!--without decimal-->
+      </tr>
     </table>
 
     <hr>
