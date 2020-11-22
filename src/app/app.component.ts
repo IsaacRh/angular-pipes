@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name:string = 'Mr. Robot';
+  name2:string = 'iSaac rOjAs HeRnAnDeZ';
   array = [1,2,3,4,5,6,7,8,9,10];
   PI:number = Math.PI;
   percentage:number = 0.235;

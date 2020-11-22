@@ -10,10 +10,12 @@ registerLocaleData(localFr);
 
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
+import { CustomCapitalizePipe } from './pipes/custom-capitalize.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomCapitalizePipe
   ],
   imports: [
     BrowserModule

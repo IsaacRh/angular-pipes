@@ -16,6 +16,11 @@
         <td>{{ name| uppercase }}</td>
       </tr>
       <tr>
+        <td>{{ name2 }}</td>
+        <td>custom Pipe</td>
+        <td>{{ name2 | customCapitalize:true }}</td>
+      </tr>
+      <tr>
         <td>{{ name }}</td>
         <td>lowercase</td>
         <td>{{ name| lowercase }}</td>
